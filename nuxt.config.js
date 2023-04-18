@@ -1,4 +1,9 @@
+require('dotenv').config();
+
 export default {
+  publicRuntimeConfig: {
+    BACKEND: process.env.BACKEND,
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'mjworld',
@@ -18,7 +23,9 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~/plugins/axios.ts',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -29,6 +36,8 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@nuxtjs/composition-api/module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
