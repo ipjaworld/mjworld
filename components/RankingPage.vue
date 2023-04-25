@@ -1,7 +1,5 @@
 <template>
-    <div>
-        랭킹 정보
-    </div>
+  <div>랭킹 정보</div>
 </template>
 
 <script lang="ts">
@@ -14,14 +12,15 @@ export default {
 
     onMounted(async () => {
       const socketInstance = useSocket()
-      await socketInstance.connect()
-      socketInstance.subscribe('/api/rankings/support', (message) => {
-        rankingData.value = JSON.parse(message.body)
+      const websocketUrl = process.env.WEBSOCKET_URL || 'fallback_websocket_url_here'
+      socketInstance.connect(websocketUrl) // 여기에 실제 웹소켓 URL을 입력하세요.
+      socketInstance.subscribe((message: any) => {
+        rankingData.value = JSON.parse(message.data)
       })
     })
 
     return {
-      rankingData
+      rankingData,
     }
   },
 }

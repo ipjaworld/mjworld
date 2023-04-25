@@ -1,15 +1,18 @@
 <template>
-    <MainLayout>
-        <CommunityPage />
-    </MainLayout>
+  <CommunityPage />
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
 import CommunityPage from '~/components/CommunityPage.vue';
-import MainLayout from '~/components/MainLayout.vue';
 
-export default {
+export default defineComponent({
+  name: "Community",
+  layout: 'MainLayout',
   middleware: 'authenticated',
-  components: { MainLayout, CommunityPage }
-}
+  components: { CommunityPage },
+  setup() {
+
+  },
+})
 </script>

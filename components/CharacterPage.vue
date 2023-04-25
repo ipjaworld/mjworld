@@ -3,11 +3,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 import Character from '~/components/Character.vue'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'CharacterPage',
-  components: { Character },
+  components: {
+    Character,
+  },
 })
 </script>

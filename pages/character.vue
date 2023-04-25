@@ -1,18 +1,15 @@
 <template>
-  <MainLayout>
-    <CharacterPage />
-  </MainLayout>
+  <CharacterPage />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useCharactersStore } from '~/store/characters'
-import MainLayout from '~/components/MainLayout.vue';
+import { useCharactersStore } from '~/pinia/characters'
 import CharacterPage from '~/components/CharacterPage.vue';
 
 export default defineComponent({
   name: 'Character',
-  components: { MainLayout, CharacterPage },
+  components: { CharacterPage },
   setup() {
     const charactersStore = useCharactersStore()
 

@@ -1,16 +1,18 @@
 <template>
-  <MainLayout>
-    <MainPage />
-  </MainLayout>
+  <MainPage />
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import MainLayout from '~/components/MainLayout.vue';
+import { defineComponent } from 'vue'
 import MainPage from '~/components/MainPage.vue';
 
-export default Vue.extend({
+export default defineComponent({
     name: "Index",
-    components: { MainLayout, MainPage }
+    layout: 'MainLayout', 
+    // middleware: 'authenticated',
+    components: { MainPage },
+    setup() {
+
+    },
 })
 </script>

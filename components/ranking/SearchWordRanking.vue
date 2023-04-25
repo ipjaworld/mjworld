@@ -9,13 +9,15 @@ import { onMounted, ref } from 'vue'
 import { useSocket } from '@/composables/useSocket'
 
 export default {
+  
   setup() {
+    /** 
     const rankingData = ref([])
 
     onMounted(async () => {
       const socketInstance = useSocket()
       await socketInstance.connect()
-      socketInstance.subscribe('/api/rankings/support', (message) => {
+      socketInstance.subscribe('/api/rankings/support', (message: any) => {
         rankingData.value = JSON.parse(message.body)
       })
     })
@@ -23,6 +25,8 @@ export default {
     return {
       rankingData
     }
+    */
   },
+  
 }
 </script>

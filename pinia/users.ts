@@ -1,11 +1,12 @@
 // import { RootState } from '~/store'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { useContext } from '@nuxtjs/composition-api'
 
 export const useUsersStore = defineStore({
     id: 'users',
     state: () => ({
-      user: {}
+      user: ref({})
     }),
     actions: {
       async joinUser(userData: any) {

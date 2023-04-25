@@ -1,15 +1,15 @@
 <template>
-    <MainLayout>
-        <SimulatorPage />
-    </MainLayout>
+  <SimulatorPage />
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
 import SimulatorPage from '~/components/SimulatorPage.vue';
-import MainLayout from '~/components/MainLayout.vue';
 
-export default {
+export default defineComponent({
+  name: "Simulator",
+  layout: 'MainLayout', 
   middleware: 'authenticated',
-  components: { SimulatorPage, MainLayout }
-}
+  components: { SimulatorPage },
+})
 </script>

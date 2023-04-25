@@ -1,25 +1,24 @@
 <template>
-  <MainLayout>
-    <div>
-      <h1>회원 가입</h1>
-      <form @submit.prevent="onSubmit">
-        <input v-model="username" type="text" placeholder="사용자 이름" />
-        <input v-model="email" type="email" placeholder="이메일" />
-        <input v-model="password" type="password" placeholder="비밀번호" />
-        <button type="submit">회원 가입</button>
-      </form>
-    </div>
-  </MainLayout>
+  <div>
+    <h1>회원 가입</h1>
+    <form @submit.prevent="onSubmit">
+      <input v-model="username" type="text" placeholder="사용자 이름" />
+      <input v-model="email" type="email" placeholder="이메일" />
+      <input v-model="password" type="password" placeholder="비밀번호" />
+      <button type="submit">회원 가입</button>
+    </form>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { useUsersStore } from '~/store/users'
-import MainLayout from '~/components/MainLayout.vue'
+import { useUsersStore } from '~/pinia/users'
 
 export default defineComponent({
   name: 'JoinPage',
-  components: { MainLayout },
+  layout: 'MainLayout', 
+  middleware: 'authenticated',
+  components: {  },
   setup() {
     const usersStore = useUsersStore()
 

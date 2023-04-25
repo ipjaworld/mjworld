@@ -1,15 +1,18 @@
 <template>
-  <MainLayout>
-    <RankingPage />
-  </MainLayout>
+  <RankingPage />
 </template>
 
 <script lang="ts">
-import MainLayout from '~/components/MainLayout.vue';
+import { defineComponent } from 'vue'
 import RankingPage from '../components/RankingPage.vue'
 
-export default {
-  components: { MainLayout, RankingPage },
+export default defineComponent({
+  name: "Ranking",
+  layout: 'MainLayout',
   middleware: 'authenticated',
-}
+  components: { RankingPage },
+  setup() {
+
+  },
+})
 </script>
